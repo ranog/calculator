@@ -1,6 +1,8 @@
 defmodule App.CalculatorTest do
   use ExUnit.Case, async: true
 
+  @moduletag :math
+
   setup do
     {:ok, two: 2, four: 4}
   end
