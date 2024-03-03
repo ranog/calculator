@@ -1,6 +1,8 @@
 defmodule App.CalculatorTest do
   use ExUnit.Case, async: true
 
+  @moduletag :math
+
   setup do
     {:ok, two: 2, four: 4}
   end
@@ -13,10 +15,12 @@ defmodule App.CalculatorTest do
     assert App.Calculator.multiply(number_two, 3) == 6
   end
 
+  @tag :negative
   test "should return nil when multiply 2 by nil", %{two: number_two} do
     assert App.Calculator.multiply(number_two, nil) == nil
   end
 
+  @tag :negative
   test "should return nil when multiply nil by 2", %{two: number_two} do
     assert App.Calculator.multiply(nil, number_two) == nil
   end
